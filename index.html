@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>KAVALER — ссылки</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #111;
+      overflow-x: hidden;
+    }
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      pointer-events: none;
+    }
+    .container {
+      background: transparent;
+      border-radius: 18px;
+      margin-top: 40px;
+      padding: 32px 20px 24px 20px;
+      max-width: 350px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: none;
+      position: relative;
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.6s;
+    }
+    .container.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #d1d1d1;
+      background: #fff;
+    }
+    .name {
+      font-size: 1.2em;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: #222;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .link-btn {
+      width: 100%;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 16px 0;
+      margin: 8px 0;
+      font-size: 1em;
+      font-weight: 500;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.18s, color 0.18s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      cursor: pointer;
+      display: block;
+    }
+    .link-btn:hover {
+      background: rgba(0,0,0,0.65);
+      color: #ffd700;
+    }
+    /* Прелоадер */
+    .preloader {
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: #111;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.3em;
+      letter-spacing: 1px;
+      transition: opacity 0.5s;
+    }
+    .preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    @media (max-width: 480px) {
+      .container {
+        margin-top: 10vw;
+        padding: 18px 4vw 18px 4vw;
+        max-width: 98vw;
+      }
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Видео-фон -->
+  <video class="video-bg" autoplay loop muted playsinline id="bgvideo">
+    <source src="https://raw.githubusercontent.com/cockka/Cockka/1cd7db7e05b7ba3eb7bcdef0dbeed20e23290017/lv_0_20250604202054.mp4" type="video/mp4">
+  </video>
+  <!-- Прелоадер -->
+  <div class="preloader" id="preloader">Загрузка...</div>
+  <div class="container hidden" id="maincontent">
+    <img src="https://i.postimg.cc/pVhYWhz2/7d444edf746b98afb1629ca51700591e.jpg" alt="Avatar" class="avatar">
+    <div class="name">KAVALER</div>
+    <div class="links">
+      <a href="https://t.me/Cockkatg" class="link-btn" target="_blank">ТЕЛЕГРАМ КАНАЛ</a>
+      <a href="https://youtube.com/@kavaler_ebet?si=w-oAgIe9cqi6CGcx" class="link-btn" target="_blank">YOUTUBE CHANNEL</a>
+      <a href="https://t.me/p3r3h0dn1ck" class="link-btn" target="_blank">BIO TG</a>
+      <a href="https://t.me/Cockka" class="link-btn" target="_blank">MY TG</a>
+      <a href="http://tiktok.com/@kavaler_ebet" class="link-btn" target="_blank">TIK TOK</a>
+      <a href="https://www.donationalerts.com/r/kavaler_cockka" class="link-btn" target="_blank">ДОНАТИК</a>
+    </div>
+  </div>
+  <script>
+    // Показываем контент только когда видео готово
+    const video = document.getElementById('bgvideo');
+    const preloader = document.getElementById('preloader');
+    const maincontent = document.getElementById('maincontent');
+    video.addEventListener('canplaythrough', function() {
+      preloader.classList.add('hidden');
+      maincontent.classList.remove('hidden');
+    });
+    // Если видео не грузится за 5 секунд — показываем сайт в любом случае
+    setTimeout(() => {
+      preloader.classList.add('hidden');
+      maincontent.classList.remove('hidden');
+    }, 5000);
+  </script>
+</body>
+</html>
+
