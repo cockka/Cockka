@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>KAVALER — ссылки</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Основные стили */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* Видео-фон */
+    #video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    
+    /* Затемнение фона для лучшей читаемости */
+    #video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+    
+    /* Остальные ваши стили */
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 18px;
+      margin-top: 40px;
+      padding: 32px 20px 24px 20px;
+      max-width: 350px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+    
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #d1d1d1;
+      background: #fff;
+      opacity: 0;
+      transform: translateY(-40px);
+      animation: avatarIn 0.8s cubic-bezier(.4,1.4,.6,1) 0.2s forwards;
+    }
+    
+    @keyframes avatarIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Остальные ваши анимации и стили остаются без изменений */
+  </style>
+</head>
+<body>
+  <!-- Видео-фон -->
+  <video id="video-bg" autoplay loop muted playsinline>
+    <source src="https://raw.githubusercontent.com/cockka/Cockka/1cd7db7e05b7ba3eb7bcdef0dbeed20e23290017/lv_0_20250604202054.mp4" type="video/mp4">
+    <!-- Запасной вариант, если видео не загрузится -->
+    <img src="https://i.postimg.cc/nV45FPvV/2147483648-219957.gif" alt="Фон">
+  </video>
+  
+  <!-- Затемнение для фона -->
+  <div id="video-overlay"></div>
+
+  <!-- Ваш контент -->
+  <div class="container">
+    <img src="https://i.postimg.cc/pVhYWhz2/7d444edf746b98afb1629ca51700591e.jpg" alt="Avatar" class="avatar">
+    <div class="name">KAVALER</div>
+    <div class="links">
+      <a href="https://t.me/Cockkatg" class="link-btn" target="_blank">ТЕЛЕГРАМ КАНАЛ</a>
+      <a href="https://youtube.com/@kavaler_ebet?si=w-oAgIe9cqi6CGcx" class="link-btn" target="_blank">YOUTUBE CHANNEL</a>
+      <a href="https://t.me/p3r3h0dn1ck" class="link-btn" target="_blank">BIO TG</a>
+      <a href="https://t.me/Cockka" class="link-btn" target="_blank">MY TG</a>
+      <a href="http://tiktok.com/@kavaler_ebet" class="link-btn" target="_blank">TIK TOK</a>
+      <a href="https://www.donationalerts.com/r/kavaler_cockka" class="link-btn" target="_blank">ДОНАТИК</a>
+    </div>
+  </div>
+</body>
+</html>
